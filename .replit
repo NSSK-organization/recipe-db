@@ -1,0 +1,4 @@
+run = "cowsay snickernutdoodooballs"
+
+[nix]
+channel = "stable-21_11"
