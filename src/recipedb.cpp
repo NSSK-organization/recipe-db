@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
+#include <cstdio>
 
 using namespace _cookbook;
 

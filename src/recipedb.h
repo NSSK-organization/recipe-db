@@ -1,15 +1,13 @@
 #ifndef RECIPEDB
 #define RECIPEDB
 
-#ifndef pinch
-#define a 1
+// note: initially, there was supposed to be a typdef of "a pinch" as 1, but some heartless fuck decided that a() should be the name of a function
 
-#endif // pinch
 
 #ifndef RECIPE
 #define RECIPE
 
-typedef step char*;
+typedef char* step;
 
 class recipe {
     public:
@@ -19,21 +17,12 @@ class recipe {
         char* units; // corresponding units
         step* steps; // steps
         char* backstory;
-        FILE* backstory_file;
 };
 
 #endif // RECIPE
-
+	   
 #ifndef INGREDIENT
 #define INGREDIENT
-
-class ingredient-recipe: public ingredient { // a recipe that is sometimes an ingredient
-	// for instance, guac can be a recipe but also an ingredient in 
-	// another recipe e.g. burrito
-	public:
-		ingredient-recipe(recipe, ingredient*, char*); // ctor which takes in
-		// ingredients and recipe
-};
 
 class ingredient {
     public:
@@ -46,6 +35,14 @@ class ingredient {
     private:
         ~ingredient(); // destructor should almost never run
 		int ingredient_id; // unique ID of ingredient
+};
+
+class ingredient-recipe: public ingredient { // a recipe that is sometimes an ingredient
+	// for instance, guac can be a recipe but also an ingredient in 
+	// another recipe e.g. burrito
+	public:
+		ingredient-recipe(recipe, ingredient*, char*); // ctor which takes in
+		// ingredients and recipe
 };
 
 void free_ingredient(ingredient*); // removes ingredient from all recipes
