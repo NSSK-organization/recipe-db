@@ -4,6 +4,9 @@
 #include <cstdlib>
 #include <cstdio>
 
+#ifndef COOKBOOK
+#define COOKBOOK
+
 using namespace _cookbook;
 
 namespace _cookbook {
@@ -23,6 +26,11 @@ namespace _cookbook {
 		return true; // it is, in fact, a new ingredient
 	}
 }
+
+#endif // COOKBOOK
+
+#ifndef INGREDIENT
+#define INGREDIENT
 
 // ingredient implementation begins here
 
@@ -92,3 +100,5 @@ void free_ingredient(ingredient* ing) {
 	for(int i = 0; i < number_of_recipes; i++)
 		ing->allRecipes[i] = NULL;
 }
+
+#endif // INGREDIENT

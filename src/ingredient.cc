@@ -4,6 +4,7 @@
 
 using namespace _cookbook;
 
+namespace _cookbook {
 ingredient::ingredient(recipe myRecipe, char* name) { // ctor with recipe and name
 
 	this = new ingredient; // for destructor
@@ -69,4 +70,6 @@ void free_ingredient(ingredient* ing) {
 
 	for(int i = 0; i < number_of_recipes; i++)
 		ing->allRecipes[i] = NULL;
+}
+
 }
