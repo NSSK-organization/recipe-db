@@ -54,3 +54,7 @@ dkms.conf
 # replit files
 *.replit*
 .ccls-cache/
+
+# VIM Files
+*.sw*
+
